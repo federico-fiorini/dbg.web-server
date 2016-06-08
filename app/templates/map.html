@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+        var devices = eval('{{ devices|tojson }}');
+    </script>
+    <script src="{{url_for('static', filename='js/map.js')}}"></script>
+    <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDPGL6oMhyfX2mlyf6VxO9Hr3hpLxZZka8&callback=initMap'></script>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>
