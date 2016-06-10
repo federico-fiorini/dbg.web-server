@@ -41,6 +41,10 @@ class Drone(db.Model):
         db.session.commit()
         return True
 
+    @staticmethod
+    def get_all():
+        return Drone.query.all()
+
 
 class Device(db.Model):
     __tablename__ = 'devices'

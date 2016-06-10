@@ -1,12 +1,15 @@
 from flask import render_template
 from app import app
-from app.models import Device
+from app.models import Device, Drone
 from app import api
 from resources import DroneAPI
 
 @app.route("/")
 def index():
-    return render_template('index.html', title='Logs')
+    drones = Drone.get_all()
+    list = [{'status': drone.status, 'device': drone.device_id,
+            'drone_id': drone.drone_id, 'mac': drone.mac} for drone in drones]
+    return render_template('index.html', title='Logs', drones=list)
 
 @app.route("/map")
 def map():

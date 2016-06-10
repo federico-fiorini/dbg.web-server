@@ -3,6 +3,40 @@ body {
     color: white;
 }
 
+table {
+    width: 100%;
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+.log {
+    padding: 10px;
+}
+
+.hacked {
+    color: green;
+}
+
+.in_progress {
+    color: orange;
+}
+
+.lost {
+    color: grey;
+}
+
+.hack_failed {
+    color: red;
+}
+
+#bottom {
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+}
 #map {
     position: absolute;
     left: 0;

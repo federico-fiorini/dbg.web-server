@@ -2,10 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>Logs</title>
 </head>
 <body>
-LOGS
+    <table style="width:100%">
+    {% for drone in drones %}
+        <tr>
+            <td class="log">ID: {{ drone['drone_id'] }}</td>
+            <td class="log">MAC: {{ drone['mac'] }}</td>
+            <td class="log">STATUS:
+                <span class="{{ drone['status'] }}">{{ drone['status'] }}</span>
+            </td>
+            <td class="log">FROM DEVICE: {{ drone['device'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    <a id="bottom" href="map">Go to map</a>
 </body>
 </html>
